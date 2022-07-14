@@ -8,7 +8,7 @@ RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 RUN apt update -y
 
-RUN apt install apache2 -y
+RUN apt-get install apache2 -y
 RUN apt install php8.1 php8.1-cli php8.1-common php8.1-curl php8.1-mbstring php8.1-mysql php8.1-xml php8.1-zip systemctl -y
 
 RUN a2enmod php8.1
